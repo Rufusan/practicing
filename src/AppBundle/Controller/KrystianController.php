@@ -20,7 +20,7 @@ class KrystianController extends Controller
      */
     public function showAction()
     {
-        return new Response("Witaj na stronie głównej!");
+        return $this->render('base.html.twig');
     }
 
     /**
