@@ -16,21 +16,26 @@ use Symfony\Component\HttpFoundation\Response;
 class KrystianController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/lucky/number")
      */
-    public function showAction()
+    public function LuckyController()
     {
-        return $this->render('base.html.twig');
+        $number = mt_rand(0, 100);
+
+        return $this->render('lucky/number.html.twig', [
+            'number' => $number,
+        ]);
     }
 
     /**
-     * @Route("/{someName}")
+     * @Route("lucky/number/{max}")
      */
-    public function pageAction($someName)
+    public function maxNumberAction($max)
     {
-        return $this->render('default/show.html.twig', [
-            'name' => $someName
-        ]);
+        $number = mt_rand(0, $max);
 
+        return $this->render('lucky/number.html.twig', [
+            'number' => $number,
+        ]);
     }
 }
