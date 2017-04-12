@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Podstrona | {{ slug }}{% endblock %}
+
+{% block body %}
+
+    <h1>Podstrona {{ slug }}</h1>
+
+    <a href = "{{ path('homepage') }}">Strona główna</a>
+    <a href = "{{ slug }}">Ta strona</a>
+
+{% endblock %}
